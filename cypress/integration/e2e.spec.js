@@ -1,5 +1,5 @@
 /// <reference types="cypress"/> 
-import Enderecofatura from '../support/page_objects/nome-funcionliada.page'
+import Enderecofatura from '../support/page_objects/enderecoFatura.page'
 
 context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
     /*  Como cliente 
@@ -36,6 +36,9 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         cy.get('.checkout-button').click();
         cy.get('#terms').check();
         cy.get('#place_order').click({ force: true });  
+
+        cy.get('[class="woocommerce-order-details__title"]').should('contain','Detalhes do pedido')
     }) 
-    
+
+        
 })
